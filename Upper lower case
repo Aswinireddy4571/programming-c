@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+class StringConverter {
+private:
+    string str;
+public:
+    StringConverter(string s) {
+        str = s;
+    }
+    string toUpper() {
+        transform(str.begin(), str.end(), str.begin(), ::toupper);
+        return str;
+    }
+    string toLower() {
+        transform(str.begin(), str.end(), str.begin(), ::tolower);
+        return str;
+    }
+};
+
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    getline(cin, input);
+    StringConverter strConvert(input);
+    cout << "Upper case: " << strConvert.toUpper() << endl;
+    cout << "Lower case: " << strConvert.toLower() << endl;
+    return 0;
+}
