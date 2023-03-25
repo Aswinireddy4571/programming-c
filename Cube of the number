@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class Cube {
+    int num;
+public:
+    Cube(int n) {
+        num = n;
+    }
+
+    ~Cube() {
+        cout << "Object destroyed." << endl;
+    }
+
+    void display() {
+        for(int i=1; i<=num; i++) {
+            cout << i << "^3 = " << i*i*i << endl;
+        }
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter an integer: ";
+    cin >> n;
+
+    Cube c(n);
+    c.display();
+
+    return 0;
+}
