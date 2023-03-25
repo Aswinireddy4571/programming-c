@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int add(int num1, int num2) {
+    return num1 + num2;
+}
+
+float add(float num1, float num2) {
+    return num1 + num2;
+}
+
+double add(double num1, double num2) {
+    return num1 + num2;
+}
+
+int main() {
+    int intNum1, intNum2;
+    float floatNum1, floatNum2;
+    double doubleNum1, doubleNum2;
+
+    // Adding two integers
+    cout << "Enter two integers: ";
+    cin >> intNum1 >> intNum2;
+    cout << "Sum of integers: " << add(intNum1, intNum2) << endl;
+
+    // Adding two floats
+    cout << "Enter two floats: ";
+    cin >> floatNum1 >> floatNum2;
+    cout << "Sum of floats: " << add(floatNum1, floatNum2) << endl;
+
+    // Adding two doubles
+    cout << "Enter two doubles: ";
+    cin >> doubleNum1 >> doubleNum2;
+    cout << "Sum of doubles: " << add(doubleNum1, doubleNum2) << endl;
+
+    return 0;
+}
