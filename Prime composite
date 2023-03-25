@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+bool is_prime(int n) {
+    if (n < 2) {
+        return false;
+    }
+    for (int i = 2; i <= sqrt(n); i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int num, prime_count = 0, composite_count = 0;
+    char choice;
+    do {
+        cout << "Enter a number: ";
+        cin >> num;
+        if (is_prime(num)) {
+            prime_count++;
+        } else {
+            composite_count++;
+        }
+        cout << "Do you want to enter another number? (y/n): ";
+        cin >> choice;
+    } while (choice == 'y' || choice == 'Y');
+    cout << "Number of prime numbers: " << prime_count << endl;
+    cout << "Number of composite numbers: " << composite_count << endl;
+    return 0;
+}
