@@ -1,0 +1,16 @@
+#include <iostream>
+
+// Function with default arguments
+void printMessage(std::string message = "Hello, World!") {
+    std::cout << message << std::endl;
+}
+
+int main() {
+    // Call function with default argument
+    printMessage(); // Output: Hello, World!
+    
+    // Call function with custom argument
+    printMessage("Hello, C++!"); // Output: Hello, C++!
+    
+    return 0;
+}
