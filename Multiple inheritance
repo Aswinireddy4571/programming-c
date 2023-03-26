@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+// Base class 1
+class Shape {
+public:
+  virtual double getArea() const = 0;
+};
+
+// Base class 2
+class Color {
+public:
+  virtual string getColor() const = 0;
+};
+
+// Derived class
+class Rectangle : public Shape, public Color {
+private:
+  double length;
+  double width;
+  string color;
+public:
+  Rectangle(double l, double w, string c) : length(l), width(w), color(c) {}
+  double getArea() const {
+    return length * width;
+  }
+  string getColor() const {
+    return color;
+  }
+};
+
+int main() {
+  Rectangle rect(5, 10, "red");
+  cout << "Area of rectangle: " << rect.getArea() << endl;
+  cout << "Color of rectangle: " << rect.getColor() << endl;
+  return 0;
+}
