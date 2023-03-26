@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+// Abstract class Shape
+class Shape {
+public:
+    virtual double getArea() = 0; // Pure virtual function to get area
+};
+
+// Derived class Square
+class Square : public Shape {
+private:
+    double side;
+public:
+    Square(double s) { side = s; } // Constructor
+    double getArea() { return side * side; } // Implement getArea function
+};
+
+// Derived class Circle
+class Circle : public Shape {
+private:
+    double radius;
+public:
+    Circle(double r) { radius = r; } // Constructor
+    double getArea() { return M_PI * radius * radius; } // Implement getArea function
+};
+
+// Main function
+int main() {
+    // Create objects of Square and Circle classes
+    Square square(5);
+    Circle circle(3);
+
+    // Call getArea function on each object and print the results
+    cout << "Area of square: " << square.getArea() << endl;
+    cout << "Area of circle: " << circle.getArea() << endl;
+
+    return 0;
+}
