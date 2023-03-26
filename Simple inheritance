@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person {
+    protected:
+        string name;
+        int age;
+    public:
+        void readPerson() {
+            cout << "Enter name: ";
+            getline(cin, name);
+            cout << "Enter age: ";
+            cin >> age;
+        }
+        void printPerson() {
+            cout << "Name: " << name << endl;
+            cout << "Age: " << age << endl;
+        }
+};
+
+class Student : public Person {
+    private:
+        string id;
+        string major;
+    public:
+        void readStudent() {
+            readPerson();
+            cin.ignore(); // to consume the newline character left by cin
+            cout << "Enter ID: ";
+            getline(cin, id);
+            cout << "Enter major: ";
+            getline(cin, major);
+        }
+        void printStudent() {
+            printPerson();
+            cout << "ID: " << id << endl;
+            cout << "Major: " << major << endl;
+        }
+};
+
+int main() {
+    Student s;
+    s.readStudent();
+    s.printStudent();
+    return 0;
+}
