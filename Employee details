@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Employee {
+public:
+    string name;
+    int age;
+    float salary;
+
+    void getDetails() {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter age: ";
+        cin >> age;
+        cout << "Enter salary: ";
+        cin >> salary;
+    }
+
+    void displayDetails() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+        cout << "Salary: " << salary << endl;
+    }
+};
+
+int main() {
+    const int MAX_EMPLOYEES = 3;
+    Employee employees[MAX_EMPLOYEES];
+
+    for (int i = 0; i < MAX_EMPLOYEES; i++) {
+        cout << "Enter details of employee " << i+1 << endl;
+        employees[i].getDetails();
+    }
+
+    for (int i = 0; i < MAX_EMPLOYEES; i++) {
+        cout << "Details of employee " << i+1 << endl;
+        employees[i].displayDetails();
+    }
+
+    return 0;
+}
