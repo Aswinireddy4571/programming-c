@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Number1 {
+  protected:
+    int n1;
+  public:
+    void getNum1() {
+        cout << "Enter first number: ";
+        cin >> n1;
+    }
+};
+
+class Number2 {
+  protected:
+    int n2;
+  public:
+    void getNum2() {
+        cout << "Enter second number: ";
+        cin >> n2;
+    }
+};
+
+class Sum : public Number1, public Number2 {
+  public:
+    void add() {
+        cout << "The sum of " << n1 << " and " << n2 << " is " << n1+n2 << endl;
+    }
+};
+
+int main() {
+  Sum obj;
+  obj.getNum1();
+  obj.getNum2();
+  obj.add();
+  return 0;
+}
