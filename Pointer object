@@ -1,0 +1,20 @@
+#include <iostream>
+
+class MyClass {
+public:
+  int value1;
+  int value2;
+};
+
+int main() {
+  MyClass obj;
+  obj.value1 = 10;
+  obj.value2 = 20;
+
+  MyClass* ptr = &obj;
+
+  std::cout << "Value 1: " << ptr->value1 << std::endl;
+  std::cout << "Value 2: " << ptr->value2 << std::endl;
+
+  return 0;
+}
