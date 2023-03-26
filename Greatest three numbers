@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a, b, c;
+  int *ptr1, *ptr2, *ptr3;
+
+  cout << "Enter three numbers: ";
+  cin >> a >> b >> c;
+
+  // Initialize pointers
+  ptr1 = &a;
+  ptr2 = &b;
+  ptr3 = &c;
+
+  // Compare values using pointers
+  if (*ptr1 > *ptr2) {
+    if (*ptr1 > *ptr3) {
+      cout << *ptr1 << " is the greatest number." << endl;
+    } else {
+      cout << *ptr3 << " is the greatest number." << endl;
+    }
+  } else {
+    if (*ptr2 > *ptr3) {
+      cout << *ptr2 << " is the greatest number." << endl;
+    } else {
+      cout << *ptr3 << " is the greatest number." << endl;
+    }
+  }
+
+  return 0;
+}
